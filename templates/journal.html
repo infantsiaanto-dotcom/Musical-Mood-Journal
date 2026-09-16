@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <metacharset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Mood Journal</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Candara, sans-serif;
+        }
+        body{
+            margin:0;
+            font-family:Segoe UI;
+            text-align: center;
+            background:linear-gradient(135deg,#1c1c2e,#2b2b45);
+            color:white;
+            padding-top:80px;
+            transition: 0.5s;
+        }
+        .card{
+            background: rgba(255,255,255,0.08);
+            padding:60px;
+            width:600px;
+            margin:auto;
+            border-radius:20px;
+        }
+        h1{
+            font-size:52px;
+            margin-bottom: 10px;
+        }
+        p{
+            opacity:0.8;
+            font-size: 20px;
+        }
+        select{
+            padding:12px 15px;
+            border-radius:12px;
+            border:none;
+            outline:none;
+            font-size:16px;
+            background: rgba(255,255,255,0.15);
+            color:white;
+            cursor:pointer;
+        }
+        #msg{
+            margin-top:15px;
+            font-size:18px;
+        }
+        option{
+            background:#2a2a40;
+            color:white
+        }
+    </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1>♪ .⩇⩇:⩇⩇ Music Mood Journal</h1>
+            <p>How are you feeling today?</p>
+            <select id="mood" onchange="changeMood()">
+                <p style="margin-top: 20px;opacity:0.8;">Choose your mood</p>
+                <p style="font-size:14px; opacity:0.6; margin-bottom:10px;">
+                    Feel the vibe before selecting 🎧
+                </p>
+                <option>Songs for your mood</option>
+                <option>Happy</option>
+                <option>Sad</option>
+                <option>Calm</option>
+                <option>Angry</option>
+            </select>
+            <div id="emoji">♫⋆｡♪ ₊˚♬ ﾟ.</div>
+            <div id="msg">Your mood will appear here</div>
+            <h3 style="margin-top:20px;">⁺˚♪º·˚Recommended Songs</h3>
+            <div id="songs" style="margin-top: 15px; line-height: 2.2";>
+                Select a mood to see songs
+            </div>
+            <h3 style="margin-top:25px;">📝What's on ur mind?</h3>
+            <textarea id="journal" placeholder="Write a few thoughts,memories,or feelings..."
+            style="
+            width:100%;
+            height:120px;
+            margin-top:10px;
+            padding:12px;
+            border-radius:12px;
+            border:none;
+            outline:none;
+            resize:none;
+            font-size:15px;
+            background:rgba(255,255,255,0.15);
+            color:white;
+            font-family:'Segoe UI', sans-serif;">
+            </textarea>
+        </div>
+        <script>
+            function changeMood(){
+                let mood = document.getElementById("mood").value;
+                if(mood === "Happy"){
+                    document.body.style.background = "linear-gradient(135deg,#2E1A47,#4B3F72)";
+                    document.getElementById("emoji").innerText = "😄";
+                    document.getElementById("msg").innerText = "Yayy:D";
+                    document.getElementById("songs").innerHTML ="ᕷ₊·ᩚWhat Makes You Beautiful-One Direction <br> ᕷ₊·ᩚLeviating-Dua Lipa <br> ᕷ₊·ᩚGolden Hour-JVKE<br>ᕷ₊·ᩚPermission to Dance-BTS<br>ᕷ₊·ᩚDaylight-Taylor Swift<br>ᕷ₊·ᩚShape of You-Ed Sheeran";
+                }
+
+                else if(mood === "Sad"){
+                   document.body.style.background = "linear-gradient(135deg,#0F2027,#203A43)";
+                   document.getElementById("emoji").innerText = "😢";
+                   document.getElementById("msg").innerText = "It's okay >.<";
+                    document.getElementById("songs").innerHTML ="ᕷ₊·ᩚSomeone Like You-Adele <br> ᕷ₊·ᩚLovely=-Billie Elish & Khalid <br> ᕷ₊·ᩚLose You to Love Me-Selena Gomez<br>ᕷ₊·ᩚEpiphany-JIN<br>ᕷ₊·ᩚYours Eyes Tell-BTS<br>ᕷ₊·ᩚGhost-Justin Beiber";
+                }
+
+                else if(mood === "Calm"){
+                    document.body.style.background = "linear-gradient(135deg,#1B2A2F,#2F4F4F)";
+                    document.getElementById("emoji").innerText = "😌";
+                    document.getElementById("msg").innerText = "Stay peaceful...";
+                     document.getElementById("songs").innerHTML ="ᕷ₊·ᩚUntil I Found You-Stephen Sanchez<br> ᕷ₊·ᩚA Thousand Years-Christina Perri<br> ᕷ₊·ᩚSpring Day-BTS<br>ᕷ₊·ᩚLove Me Again-V<br>ᕷ₊·ᩚEuphoria-Jungkook<br>ᕷ₊·ᩚPurpose-Justin Beiber";
+                }
+
+                else if(mood === "Angry"){
+                    document.body.style.background = "linear-gradient(135deg,#2C0E1A,#4A1C2C)";
+                    document.getElementById("emoji").innerText = "😡";
+                    document.getElementById("msg").innerText = "Let it out!";
+                     document.getElementById("songs").innerHTML ="ᕷ₊·ᩚBeliever-Imagine Dragons <br> ᕷ₊·ᩚHappier Than Ever-Billie Eillish<br> ᕷ₊·ᩚMic Drop-BTS<br>ᕷ₊·ᩚVampire-Olivia Rodrigo<br>ᕷ₊·ᩚUnstoppable-Sia<br>ᕷ₊·ᩚEnemy-Imagine Dragons & JID";
+                }
+            }
+
+        </script>
+    </body>
+</html>
